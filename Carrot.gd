@@ -5,6 +5,7 @@ var carrotValues = [5, 10, 20]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+    randomize()
     # Select a random color and value for each carot
     var carrot_types = $AnimatedSprite.frames.get_animation_names()
     var index = randi() % carrot_types.size()
