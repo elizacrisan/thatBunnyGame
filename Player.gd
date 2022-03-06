@@ -8,6 +8,7 @@ var jumpForce : int = 400
 var gravityPull : int = 400
 var velocity : Vector2 = Vector2(0,0)
 onready var sprite : AnimatedSprite = $AnimatedSprite
+onready var scoreLabel = get_node("/root/MainScene/HUD")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -48,3 +49,7 @@ func _physics_process(delta):
         sprite.animation = "fall"
     sprite.play()
 
+
+func eat_carrot(value : int):
+    score += value
+    scoreLabel.update_score(score)
